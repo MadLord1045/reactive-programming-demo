@@ -14,6 +14,19 @@
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
           <div>{{card.text}}</div>
+          <br><br>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Commentaires
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p *ngFor="let comment of postComments | async" style="text-align: left;">
+                {{ comment.text }}
+              </p>
+            </mat-expansion-panel>
+          </mat-accordion>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

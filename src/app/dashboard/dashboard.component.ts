@@ -3,6 +3,7 @@ import { map, mergeMap, startWith } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { PostsService } from '../services/posts.service';
 import { FormControl } from '@angular/forms';
+import { CommentsService } from '../services/comments.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,5 +16,8 @@ export class DashboardComponent {
   search = new FormControl('');
   
   cards = this.search.valueChanges.pipe(startWith(''), mergeMap((val) => this.posts.searchPost(val)));
-  constructor(private breakpointObserver: BreakpointObserver, private posts: PostsService) {}
+
+  postComments = this.comments.list;
+  
+  constructor(private comments: CommentsService, private posts: PostsService) {}
 }
