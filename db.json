@@ -1,12 +1,36 @@
 {
   "posts": [
-    { "id": 1, "title": "Un post", "text": "salut" },
-    { "id": 2, "title": "Un post", "text": "ça va?" },
-    { "id": 3, "title": "Un post", "text": "bien" }
+    {
+      "id": 1,
+      "title": "Un post",
+      "text": "salut"
+    },
+    {
+      "id": 2,
+      "title": "Un post",
+      "text": "ça va?"
+    },
+    {
+      "id": 3,
+      "title": "Un post",
+      "text": "bien"
+    }
   ],
   "comments": [
-    { "id": 1, "postId": 1, "text": "salut" },
-    { "id": 2, "postId": 2, "text": "ça va?" },
-    { "id": 3, "postId": 3, "text": "bien" }
+    {
+      "postId": 1,
+      "text": "ben oui",
+      "id": 5
+    },
+    {
+      "postId": 1,
+      "text": "et toi ?",
+      "id": 6
+    },
+    {
+      "postId": 2,
+      "text": "yo",
+      "id": 7
+    }
   ]
 }

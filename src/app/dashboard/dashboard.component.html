@@ -22,11 +22,24 @@
                   Commentaires
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <p *ngFor="let comment of postComments | async" style="text-align: left;">
-                  <button mat-mini-fab color="warn">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                {{ comment.text }}
+              <ng-container *ngFor="let comment of postComments | async">
+                <p *ngIf="comment.postId == card.id" style="text-align: left;">
+                    <button mat-mini-fab color="warn" (click)="delete(comment.id)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  {{ comment.text }}
+                </p>
+              </ng-container>
+              <p style="text-align: left;">
+                <mat-form-field>
+                  <mat-label>Commenter</mat-label>
+                  <input matInput  [(ngModel)]="card.draft">
+                </mat-form-field>
+                <button mat-mini-fab
+                  color="success"
+                  (click)="add({postId: card.id, text: card.draft}); card.draft = ''">
+                  <mat-icon>add</mat-icon>
+                </button>
               </p>
             </mat-expansion-panel>
           </mat-accordion>

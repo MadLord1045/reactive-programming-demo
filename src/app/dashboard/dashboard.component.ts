@@ -20,4 +20,12 @@ export class DashboardComponent {
   postComments = this.comments.list;
   
   constructor(private comments: CommentsService, private posts: PostsService) {}
+
+  delete(id) {
+    this.comments.triggerDelete.next(id);
+  }
+
+  add(comment) {
+    this.comments.triggerAdd.next(comment);
+  }
 }
