@@ -23,6 +23,9 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <p *ngFor="let comment of postComments | async" style="text-align: left;">
+                  <button mat-mini-fab color="warn">
+                    <mat-icon>delete</mat-icon>
+                  </button>
                 {{ comment.text }}
               </p>
             </mat-expansion-panel>
