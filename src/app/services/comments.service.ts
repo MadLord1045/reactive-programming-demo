@@ -13,14 +13,14 @@ export class CommentsService {
 
   deleteFunction = val => this.http.delete(`${this.url}/${val}`);
 
-  delete = this.triggerDelete.pipe(mergeMap(this.deleteFunction));
+  delete = this.triggerDelete.pipe(mergeMap(this.deleteFunction), share());
   
 
   triggerAdd = new Subject();
 
   addFunction = comment => this.http.post(`${this.url}`, comment);
 
-  add = this.triggerAdd.pipe(mergeMap(this.addFunction));
+  add = this.triggerAdd.pipe(mergeMap(this.addFunction), share());
   
   getComments = () => {
     return this.http.get(this.url);

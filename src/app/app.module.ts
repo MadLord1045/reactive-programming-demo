@@ -14,12 +14,15 @@ import { MatInputModule } from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
+    MatSnackBarModule,
     LayoutModule
   ],
   providers: [],
